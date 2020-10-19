@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, createTheme, Arwes } from 'arwes';
 import Home from './pages/Home.js'
 import backgroundImg from './static/images/background-large.jpg'
-import glow from './static/images/glow.png'
+import glow from './static/images/redgrid.svg'
 
 function App(props) {
   return (

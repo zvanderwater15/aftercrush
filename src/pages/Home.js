@@ -1,22 +1,21 @@
 import React from 'react';
-import { withStyles, Row, Col, Button } from 'arwes';
+import { withStyles, Heading, Row, Col, Button } from 'arwes';
 
 const styles = theme => ({
     root: {
       padding: [theme.padding, 0],
-    //   background: theme.background.primary.level0,
       height: '100vh'
     },
     header: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: '10%',
+        marginBottom: '2%' 
     },  
     title: {
-      fontSize: '7rem',
-      marginBottom: '2%', 
-      fontFamily: '"Lucida Console", Monaco, monospace'
+       fontSize: '9rem !important',
     },
     links: {
         display: 'flex',
@@ -41,7 +40,7 @@ const styles = theme => ({
   
   const Header = withStyles(styles)(({ classes, children }) => (
     <header className={classes.header}>
-      <h1 className={classes.title}>{children}</h1>
+        <Heading className={classes.title} node='h1'>{children}</Heading>
     </header>
   ));
   
@@ -51,8 +50,12 @@ const styles = theme => ({
     </Row>
   ));
 
-  const LinkButton = withStyles(styles)(({ classes, children }) => (
-    <Col className={classes.buttonCol}><Button animate show>{children}</Button></Col>
+  const LinkButton = withStyles(styles)(({ classes, children, link, page }) => (
+    <Col className={classes.buttonCol}>
+        <a href={link} target = "_blank" rel = "noopener noreferrer">
+            <Button animate show>{children}</Button>
+        </a>
+    </Col>
   ));
 
   function Home(props) {
@@ -60,10 +63,10 @@ const styles = theme => ({
         <Container>
             <Header>Aftercrush</Header>
             <Links>
-                <LinkButton>About</LinkButton>
-                <LinkButton>Music</LinkButton>
-                <LinkButton>Lyric Generator</LinkButton>
-                <LinkButton>Contact</LinkButton>
+                <LinkButton page='/About.js'>About</LinkButton>
+                <LinkButton page='/Music.js'>Music</LinkButton>
+                <LinkButton link='https://github.com/zvanderwater15/GazerBot'>Lyric Generator</LinkButton>
+                <LinkButton page='/Contact.js'>Contact</LinkButton>
             </Links>
         </Container>
       );
