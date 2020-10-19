@@ -1,11 +1,10 @@
 import React from 'react';
-import '../App.css';
 import { withStyles, Row, Col, Button } from 'arwes';
 
 const styles = theme => ({
     root: {
       padding: [theme.padding, 0],
-      background: theme.background.primary.level0,
+    //   background: theme.background.primary.level0,
       height: '100vh'
     },
     header: {
