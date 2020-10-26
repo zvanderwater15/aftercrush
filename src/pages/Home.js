@@ -1,6 +1,12 @@
 import React from 'react';
 import { withStyles, Heading, Row, Col, Button } from 'arwes';
 import { useMediaQuery } from 'react-responsive';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 const styles = theme => ({
@@ -70,15 +76,27 @@ const styles = theme => ({
     </header>
   ));
   
-  const LinkButtonMobile = withStyles(styles)(({ classes, children, link, page }) => (
-    <Row>
-        <a href={link} className={classes.mobileButton} target = "_blank" rel = "noopener noreferrer">
+  const PageButtonMobile = withStyles(styles)(({ classes, children,  page }) => (
+    <Row className={classes.mobileButton}>
+      <Link to={page}><Button animate show>{children}</Button></Link>
+    </Row>
+  ));
+
+  const LinkButtonMobile = withStyles(styles)(({ classes, children, link }) => (
+    <Row  className={classes.mobileButton}>
+        <a href={link} target = "_blank" rel = "noopener noreferrer">
             <Button animate show>{children}</Button>
         </a>
     </Row>
   ));
 
-  const LinkButtonDesktop = withStyles(styles)(({ classes, children, link, page }) => (
+  const PageButtonDesktop = withStyles(styles)(({ classes, children,  page }) => (
+    <Col className={classes.buttonCol}>
+      <Link to={page}><Button animate show>{children}</Button></Link>
+    </Col>
+  ));
+
+  const LinkButtonDesktop = withStyles(styles)(({ classes, children, link }) => (
     <Col className={classes.buttonCol}>
         <a href={link} target = "_blank" rel = "noopener noreferrer">
             <Button animate show>{children}</Button>
@@ -108,25 +126,32 @@ const styles = theme => ({
   }
   
   function LinkButton(props) {
-    if (props.isMobile) {
-        return <LinkButtonMobile link={props.link}>{props.children}</LinkButtonMobile>;
+    if (props.isMobile && props.link) {
+      return <LinkButtonMobile link={props.link}>{props.children}</LinkButtonMobile>;
+    }
+    else if (props.isMobile && props.page) {
+      return <PageButtonMobile page={props.page}>{props.children}</PageButtonMobile>;
+    }
+    else if (!(props.isMobile) && props.link) {
+      return <LinkButtonDesktop link={props.link} >{props.children}</LinkButtonDesktop>;
     }
     else {
-        return <LinkButtonDesktop link={props.link}>{props.children}</LinkButtonDesktop>;
+      return <PageButtonDesktop page={props.page}>{props.children}</PageButtonDesktop>;
     }
   }
 
   function Home(props) {
     const isMobile = useMediaQuery({ query: '(max-width: 760px)' });
+    console.log(isMobile)
 
     return (
         <Container>
             <Header>Aftercrush</Header>
             <Links isMobile={isMobile}>
-                <LinkButton page='/About.js' isMobile={isMobile}>About</LinkButton>
-                <LinkButton page='/Music.js' isMobile={isMobile}>Music</LinkButton>
+                <LinkButton page='/about' isMobile={isMobile}>About</LinkButton>
+                <LinkButton page='/music' isMobile={isMobile}>Music</LinkButton>
                 <LinkButton link='https://github.com/zvanderwater15/GazerBot' isMobile={isMobile}>Lyric Generator</LinkButton>
-                <LinkButton page='/Contact.js' isMobile={isMobile}>Contact</LinkButton>
+                <LinkButton page='/contact' isMobile={isMobile}>Contact</LinkButton>
             </Links>
         </Container>
     );
