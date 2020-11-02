@@ -1,12 +1,7 @@
 import React from 'react';
 import { withStyles, Heading, Row, Col, Button } from 'arwes';
 import { useMediaQuery } from 'react-responsive';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const styles = theme => ({

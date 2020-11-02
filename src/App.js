@@ -10,6 +10,7 @@ import Home from './pages/Home.js'
 import Contact from './pages/Contact.js'
 import About from './pages/About.js'
 import Music from './pages/Music.js'
+import SiteHeader from './Header.js'
 import backgroundImg from './static/images/background-medium.jpg'
 import glow from './static/images/redgrid.svg'
 
@@ -21,12 +22,15 @@ function App(props) {
         {anim => (
           <Switch>
             <Route path="/about">
+              <SiteHeader/>
               <About />
             </Route>
             <Route path="/contact">
+              <SiteHeader/>
               <Contact />
             </Route>
             <Route path="/music">
+              <SiteHeader/>
               <Music />
             </Route>
             <Route path="/">

@@ -33,12 +33,15 @@ const ContentFrame = withStyles(styles)(({ classes, children }) => (
 
 function About(props) {
     return (
-        <ContentFrame>
-            <Content>
-                <Heading>About</Heading>
-                <Row>We are a band.... (under construction)</Row>
-            </Content>
-        </ContentFrame>);
+        <div>
+            <ContentFrame>
+                <Content>
+                    <Heading>About</Heading>
+                    <Row>We are a band.... (under construction)</Row>
+                </Content>
+            </ContentFrame>
+        </div>
+    )
 }
 
 export default About;
