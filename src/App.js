@@ -10,7 +10,7 @@ import Home from './pages/Home.js'
 import Contact from './pages/Contact.js'
 import About from './pages/About.js'
 import Music from './pages/Music.js'
-import SiteHeader from './Header.js'
+import SiteHeader from './components/Header.js'
 import backgroundImg from './static/images/background-medium.jpg'
 import glow from './static/images/redgrid.svg'
 

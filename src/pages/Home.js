@@ -53,7 +53,7 @@ const styles = theme => ({
         justifyContent: 'center',
         textAlign: 'center',
         width: '50%',
-        marginBottom: '4%',
+        marginBottom: '4%',                                           
         marginLeft: 'auto',
         marginRight: 'auto'
     }
