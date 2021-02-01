@@ -3,8 +3,7 @@ import { ThemeProvider, createTheme, Arwes } from 'arwes';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './pages/Home.js'
 import Contact from './pages/Contact.js'

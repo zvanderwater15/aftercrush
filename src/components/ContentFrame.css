@@ -1,0 +1,7 @@
+.contentFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10% 25% 2% 25% !important;
+  }
+  

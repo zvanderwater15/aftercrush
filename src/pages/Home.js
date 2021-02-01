@@ -1,115 +1,60 @@
 import React from 'react';
-import { withStyles, Heading, Row, Col, Button } from 'arwes';
+import {  Heading, Row, Col, Button } from 'arwes';
 import { useMediaQuery } from 'react-responsive';
 import {Link} from "react-router-dom";
-
-
-const styles = theme => ({
-    root: {
-      padding: [theme.padding, 0],
-      height: '100vh'
-    },
-    header: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        textAlign: 'center',
-        marginTop: '10%',
-        marginBottom: '2%' 
-    },  
-    title: {
-        [`@media (min-width: 0px)`]: {
-            fontSize: '3rem !important'
-        },
-        [`@media (min-width: ${theme.responsive.small + 1}px)`]: {
-            fontSize: '4rem !important'
-        },
-        [`@media (min-width: ${theme.responsive.medium + 1}px)`]: {
-            fontSize: '6rem !important'
-        },
-        [`@media (min-width: ${theme.responsive.large + 1}px)`]: {
-            fontSize: '9rem !important'
-        },
-    },
-    mobileTitle: {
-        fontSize: '3rem !important',
-    }, 
-    links: {
-        display: 'flex',
-        width: '70%',
-        justifyContent: 'center',
-        textAlign: 'center'
-    },    
-    buttonCol: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        textAlign: 'center',
-        margin: '0px 5px 0px 5px'
-    },
-    mobileButton: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        textAlign: 'center',
-        width: '50%',
-        marginBottom: '4%',                                           
-        marginLeft: 'auto',
-        marginRight: 'auto'
-    }
-  });
+import "./Home.css"
   
-  const Container = withStyles(styles)(({ classes, children }) => (
-    <div className={classes.root}>
-      {children}
+  const Container = (props) => (
+    <div className="root">
+      {props.children}
     </div>
-  ));
+  );
   
-  const Header = withStyles(styles)(({ classes, children }) => (
-    <header className={classes.header}>
-        <Heading className={classes.title} node='h1'>{children}</Heading>
+  const Header = (props) => (
+    <header className="header">
+        <Heading className="title" node='h1'>{props.children}</Heading>
     </header>
-  ));
+  );
   
-  const PageButtonMobile = withStyles(styles)(({ classes, children,  page }) => (
-    <Row className={classes.mobileButton}>
-      <Link to={page}><Button animate show>{children}</Button></Link>
+  const PageButtonMobile = (props) => (
+    <Row className="mobileButton">
+      <Link to={props.page}><Button animate show>{props.children}</Button></Link>
     </Row>
-  ));
+);
 
-  const LinkButtonMobile = withStyles(styles)(({ classes, children, link }) => (
-    <Row  className={classes.mobileButton}>
-        <a href={link} target = "_blank" rel = "noopener noreferrer">
-            <Button animate show>{children}</Button>
+  const LinkButtonMobile = (props) => (
+    <Row  className="mobileButton">
+        <a href={props.link} target = "_blank" rel = "noopener noreferrer">
+            <Button animate show>{props.children}</Button>
         </a>
     </Row>
-  ));
+  );
 
-  const PageButtonDesktop = withStyles(styles)(({ classes, children,  page }) => (
-    <Col className={classes.buttonCol}>
-      <Link to={page}><Button animate show>{children}</Button></Link>
+  const PageButtonDesktop = (props) => (
+    <Col className="buttonCol">
+      <Link to={props.page}><Button animate show>{props.children}</Button></Link>
     </Col>
-  ));
+  );
 
-  const LinkButtonDesktop = withStyles(styles)(({ classes, children, link }) => (
-    <Col className={classes.buttonCol}>
-        <a href={link} target = "_blank" rel = "noopener noreferrer">
-            <Button animate show>{children}</Button>
+  const LinkButtonDesktop = (props) => (
+    <Col className="buttonCol">
+        <a href={props.link} target = "_blank" rel = "noopener noreferrer">
+            <Button animate show>{props.children}</Button>
         </a>
     </Col>
-  ));
+  );
 
-  const DesktopLinks = withStyles(styles)(({ classes, children }) => (
-    <Row className={classes.links}>
-      {children}
+  const DesktopLinks = (props) => (
+    <Row className="links">
+      {props.children}
     </Row>
-  ));
+  );
 
-  const MobileLinks = withStyles(styles)(({ classes, children }) => (
+  const MobileLinks = (props) => (
     <div>
-      {children}
+      {props.children}
     </div>
-  ));
+  );
 
   function Links(props) {
     if (props.isMobile) {

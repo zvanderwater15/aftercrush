@@ -1,0 +1,30 @@
+#siteHeader {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+}
+
+#homeLink {
+    margin: 10px 10px 0px 10px;
+    width: auto;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+#homeLogo {
+    width: auto;
+    display: inline;
+}
+
+.linkGroup {
+    margin-top: 10px;
+    float: right;
+}
+
+.routeLink {
+    text-decoration: none;
+    border: 0;
+    color: inherit;
+    font-size: 24px;
+    margin: 10px 20px 10px 20px;
+}

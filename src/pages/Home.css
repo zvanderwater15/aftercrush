@@ -1,0 +1,54 @@
+.root {
+    padding: 100px 100px 100px 100px;
+    height: 100vh
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 2%;
+};
+
+@media (min-width: 0px) {
+    .title {
+        font-size: 3rem !important;
+    }
+}
+@media (min-width:  760px) {
+    .title {
+        font-size: 6rem !important;
+    }
+}
+@media (min-width: 1200px) {
+    .title {
+        font-size: 9rem !important;
+    }
+}
+
+
+.links {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    text-align: center;
+};
+
+.buttonCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0px 5px 0px 5px
+}
+
+.mobileButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    margin: 0px auto 4% auto;
+}
