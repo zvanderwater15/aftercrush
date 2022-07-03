@@ -1,19 +1,16 @@
-import React from 'react';
-import { Heading, Row } from 'arwes';
-import Content from "../components/Content.js"
-import ContentFrame from "../components/ContentFrame.js"
-
-
-  
+import React from "react";
+import { Heading, Row } from "arwes";
+import ContentFrame from "../components/ContentFrame.js";
 
 function Contact(props) {
-    return (
-        <ContentFrame>
-            <Content>
-                <Heading>Contact</Heading>
-                <Row>(under construction)</Row>
-            </Content>
-        </ContentFrame>);
+  return (
+    <Row className="centeredRow">
+      <ContentFrame>
+        <Heading>Contact</Heading>
+        <Row>Send comments and questions to zoe.van42@gmail.com.</Row>
+      </ContentFrame>
+    </Row>
+  );
 }
 
 export default Contact;

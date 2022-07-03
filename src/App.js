@@ -9,6 +9,7 @@ import Home from './pages/Home.js'
 import Contact from './pages/Contact.js'
 import About from './pages/About.js'
 import Music from './pages/Music.js'
+import Projects from './pages/Projects.js'
 import SiteHeader from './components/Header.js'
 import backgroundImg from './static/images/background.jpg'
 import glow from './static/images/redgrid.svg'
@@ -27,6 +28,10 @@ function App(props) {
             <Route path="/contact">
               <SiteHeader/>
               <Contact />
+            </Route>
+            <Route path="/projects">
+              <SiteHeader/>
+              <Projects />
             </Route>
             <Route path="/music">
               <SiteHeader/>

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 50px;
 }
 
 code {
@@ -12,4 +13,12 @@ code {
     monospace;
 }
 
+a {
+  color: aqua;
+}
 
+.centeredRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
